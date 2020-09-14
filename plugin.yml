@@ -7,11 +7,29 @@ configuration:
   additionalProperties: false
   properties:
     os:
-      default: linux
       type: string
+      default: linux
       enum:
         - linux
         - macos
-    version:
-      type: string
-      default: latest
+    generation:
+      default: 3
+      oneOf:
+        - type: [number, string]
+          enum:
+            - 2
+            - "2"
+            - 3
+            - "3"
+        - type: object
+          additionalProperties: false
+          properties:
+            3:
+              type: object
+              additionalProperties: false
+              required:
+                - version
+              properties:
+                version:
+                  type: string
+                  default: "latest"
