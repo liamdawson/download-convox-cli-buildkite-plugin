@@ -1,0 +1,7 @@
+version: '2'
+services:
+  lint:
+    image: buildkite/plugin-linter
+    command: ['--id', 'liamdawson/download-convox-cli']
+    volumes:
+      - ".:/plugin:ro"

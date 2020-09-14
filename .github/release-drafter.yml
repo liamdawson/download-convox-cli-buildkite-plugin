@@ -1,0 +1,19 @@
+# Config for https://github.com/apps/release-drafter
+name-template: 'v$NEXT_MINOR_VERSION (Optional summary)'
+tag-template: 'v$NEXT_MINOR_VERSION'
+template: |
+  ## Changes
+
+  $CHANGES
+
+  ## Upgrading
+
+  To upgrade, update your `pipeline.yml` files:
+
+  ```diff
+  steps:
+    - plugins:
+  -     liamdawson/download-convox-cli#$PREVIOUS_TAG:
+  +     liamdawson/download-convox-cli#v$NEXT_MINOR_VERSION:
+          os: linux
+  ```

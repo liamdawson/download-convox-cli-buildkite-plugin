@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euo pipefail
+
+target_os="${BUILDKITE_PLUGIN_DOWNLOAD_CONVOX_CLI_OS:-linux}"
+target_version="${BUILDKITE_PLUGIN_DOWNLOAD_CONVOX_CLI_VERSION:-latest}"
+
+if [ "$target_version" = "latest" ]; then
+  cli_url="https://github.com/convox/convox/releases/${target_version}/download/convox-${target_os}"
+else
+  cli_url="https://github.com/convox/convox/releases/download/${target_version}/convox-${target_os}"
+fi
+
+HOOKS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+PLUGIN_DIR="$(cd "${HOOKS_DIR}/.." && pwd)"
+BIN_DIR="${PLUGIN_DIR}/bin"
+
+mkdir "$BIN_DIR"
+
+curl -L "$cli_url" -o "${BIN_DIR}/convox"
+chmod +x "${BIN_DIR}/convox"
+
+export PATH="${BIN_DIR}:${PATH}"

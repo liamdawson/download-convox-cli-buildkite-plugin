@@ -1,0 +1,17 @@
+name: Download Convox CLI
+description: Download the Convox CLI and place it in $PATH
+author: https://github.com/liamdawson
+requirements:
+  - curl
+configuration:
+  additionalProperties: false
+  properties:
+    os:
+      default: linux
+      type: string
+      enum:
+        - linux
+        - macos
+    version:
+      type: string
+      default: latest
