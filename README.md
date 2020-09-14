@@ -9,7 +9,7 @@ The following pipeline will build a new release, downloading the latest Convox C
 ```yaml
 steps:
   - plugins:
-    - liamdawson/download-convox-cli#v1.0.0:
+    - liamdawson/download-convox-cli#v1.0.1:
         os: linux
     - liamdawson/convox-build#v1.0.0:
         rack: test-rack

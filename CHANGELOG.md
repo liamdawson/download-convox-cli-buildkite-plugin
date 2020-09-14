@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-09-13
+
+### Fixed
+
+- Issue when `bin` already exists (due to previous plugin run on the same runner)
+
 ## [1.0.0] - 2020-09-13
 
 ### Added
 
 - Initial download functionality
 
-[Unreleased]: https://github.com/liamdawson/download-convox-cli-buildkite-plugin/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/liamdawson/download-convox-cli-buildkite-plugin/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/liamdawson/download-convox-cli-buildkite-plugin/releases/tag/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/liamdawson/download-convox-cli-buildkite-plugin/releases/tag/v1.0.0
