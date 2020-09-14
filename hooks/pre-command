@@ -14,7 +14,9 @@ HOOKS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 PLUGIN_DIR="$(cd "${HOOKS_DIR}/.." && pwd)"
 BIN_DIR="${PLUGIN_DIR}/bin"
 
-mkdir "$BIN_DIR"
+mkdir -p "$BIN_DIR"
+
+! [ -f "${BIN_DIR}/convox" ] || rm "${BIN_DIR}/convox"
 
 curl -L "$cli_url" -o "${BIN_DIR}/convox"
 chmod +x "${BIN_DIR}/convox"
